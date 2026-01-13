@@ -34,7 +34,7 @@ st.write(fileimage)
 image = fileimage + '/' + fileName
 st.image(image)
 price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
-st.subheader(catalog_list + ' Color Selected!')
+st.write('Price :', price)
 st.write(catalog_list)
 
    # my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
