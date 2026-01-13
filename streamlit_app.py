@@ -27,18 +27,18 @@ pd_df = my_dataframe.to_pandas()
 catalog_list = st.multiselect("Choose Color", my_dataframe, max_selections=1)
 
 if catalog_list:
-    ingredients_string = ''
-    for fruit_chosen in catalog_list:
-        ingredients_string += fruit_chosen + ' '
-        search_on = pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
+    catalog_string = ''
+    for catalog_chosen in catalog_list:
+        catalog_string = catalog_chosen + ' '
+        price = pd_df.loc[pd_df['color_or_style'] == catalog_chosen, 'price'].iloc[0]
         st.subheader(fruit_chosen + ' Nutrition Information!')
         #smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+search_on)
         #st.text(smoothiefroot_response.json())
-        sf_df = st.dataframe(data=smoothiefroot_response.json(),width="content")
-    st.write(ingredients_string)
+        #sf_df = st.dataframe(data=smoothiefroot_response.json(),width="content")
+    st.write(catalog_string)
 
    # my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
-            values ('""" + ingredients_string + """','""" + name_on_order + """')"""
+            #values ('""" + ingredients_string + """','""" + name_on_order + """')"""
 
     #st.write(my_insert_stmt)
 
@@ -46,6 +46,6 @@ if catalog_list:
 
   
     
-    if time_to_insert:
-        session.sql(my_insert_stmt).collect()
-        st.success('Your Smoothie is ordered, '+ name_on_order +' !')
+    #if time_to_insert:
+        #session.sql(my_insert_stmt).collect()
+        #st.success('Your Smoothie is ordered, '+ name_on_order +' !')
