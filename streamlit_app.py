@@ -16,18 +16,20 @@ st.write(
 #session = get_active_session()
 cnx=st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("ZENAS_ATHLEISURE_DB.PRODUCTS.catalog_for_website").select(col('color_or_style'),col('price'), col('file_url'), col('size_list'),col('upsell_product_desc'))
+my_dataframe = session.table("ZENAS_ATHLEISURE_DB.PRODUCTS.catalog_for_website").select(col('COLOR_OR_STYLE'),col('PRICE'), col('FILE_URL'), col('SIZE_LIST'),col('UPSELL_PRODUCT_DESC'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 #convert snowpark dataframe to pandas dataframe so we can use Loc function
 pd_df = my_dataframe.to_pandas()
-st.dataframe(pd_df)
+#st.dataframe(pd_df)
 #st.stop()
 
 catalog_list = st.selectbox("Choose Color", my_dataframe, index=None)
 
 if catalog_list:
-    price = pd_df.loc[pd_df['color_or_style'] == catalog_list, 'price'].iloc[0]
+    file-url = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
+    st.image(file-url)
+    price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
     st.subheader(catalog_list + ' Color Selected!')
     st.write(catalog_list)
 
