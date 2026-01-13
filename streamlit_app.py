@@ -24,18 +24,13 @@ pd_df = my_dataframe.to_pandas()
 #st.dataframe(pd_df)
 #st.stop()
 
-option = st.selectbox(
-    "How would you like to be contacted?",
-    ("Email", "Home phone", "Mobile phone"),
-)
-
-st.write("You selected:", option)
-
 catalog_list = st.selectbox("Choose Color", pd_df['COLOR_OR_STYLE'], index=None,)
 
 st.write(catalog_list)
-fileName = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_NAME'].iloc[0]
-fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
+fileName = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_NAME']
+fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL']
+st.write(fileName)
+st.write(fileimage)
 image = fileimage + '/' + fileName
 st.image(image)
 price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
