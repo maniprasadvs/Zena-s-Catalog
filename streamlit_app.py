@@ -29,7 +29,8 @@ catalog_list = st.selectbox("Choose Color", my_dataframe, index=None)
 
 fileName = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_NAME'].iloc[0]
 fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
-st.image(fileimage+'\'+fileName)
+image = fileimage + '/' + fileName
+st.image(image)
 price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
 st.subheader(catalog_list + ' Color Selected!')
 st.write(catalog_list)
