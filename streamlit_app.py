@@ -1,5 +1,5 @@
 
-fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]import streamlit as st
+import streamlit as st
 #import requests
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
