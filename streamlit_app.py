@@ -24,6 +24,13 @@ pd_df = my_dataframe.to_pandas()
 #st.dataframe(pd_df)
 #st.stop()
 
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+)
+
+st.write("You selected:", option)
+
 catalog_list = st.selectbox("Choose Color", my_dataframe, index=None)
 
 st.write(catalog_list)
