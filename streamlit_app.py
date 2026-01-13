@@ -1,4 +1,4 @@
-# Import python packages
+=none# Import python packages
 import streamlit as st
 #import requests
 #from snowflake.snowpark.context import get_active_session
@@ -24,7 +24,7 @@ pd_df = my_dataframe.to_pandas()
 #st.dataframe(pd_df)
 #st.stop()
 
-catalog_list = st.selectbox("Choose Color", my_dataframe)
+catalog_list = st.selectbox("Choose Color", my_dataframe, index=none)
 
 if catalog_list:
     catalog_string = ''
