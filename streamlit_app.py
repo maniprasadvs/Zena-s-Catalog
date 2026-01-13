@@ -16,7 +16,7 @@ st.write(
 #session = get_active_session()
 cnx=st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("ZENAS_ATHLEISURE_DB.PRODUCTS.catalog_for_website").select(col('COLOR_OR_STYLE'),col('PRICE'), col('FILE_URL'), col('SIZE_LIST'),col('UPSELL_PRODUCT_DESC'))
+my_dataframe = session.table("ZENAS_ATHLEISURE_DB.PRODUCTS.catalog_for_website").select(col('COLOR_OR_STYLE'),col('PRICE'),  col('FILE_NAME'), col('FILE_URL'), col('SIZE_LIST'),col('UPSELL_PRODUCT_DESC'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 #convert snowpark dataframe to pandas dataframe so we can use Loc function
@@ -26,12 +26,13 @@ pd_df = my_dataframe.to_pandas()
 
 catalog_list = st.selectbox("Choose Color", my_dataframe, index=None)
 
-if catalog_list:
-    fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
-    st.image(fileimage)
-    price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
-    st.subheader(catalog_list + ' Color Selected!')
-    st.write(catalog_list)
+
+fileName = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_NAME'].iloc[0]
+fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
+st.image(fileimage+'\'+fileName)
+price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
+st.subheader(catalog_list + ' Color Selected!')
+st.write(catalog_list)
 
    # my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             #values ('""" + ingredients_string + """','""" + name_on_order + """')"""
