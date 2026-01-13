@@ -31,7 +31,7 @@ option = st.selectbox(
 
 st.write("You selected:", option)
 
-catalog_list = st.selectbox("Choose Color", my_dataframe, index=None)
+catalog_list = st.selectbox("Choose Color", my_dataframe, index=None,)
 
 st.write(catalog_list)
 fileName = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_NAME'].iloc[0]
