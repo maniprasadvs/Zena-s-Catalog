@@ -1,4 +1,4 @@
-#import python packages
+import python packages
 import streamlit as st
 #import requests
 #from snowflake.snowpark.context import get_active_session
@@ -26,10 +26,3 @@ fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL']
 st.write(fileName)
 st.write(fileimage)
 
-
-  
-  
-    
-    #if time_to_insert:
-        #session.sql(my_insert_stmt).collect()
-        #st.success('Your Smoothie is ordered, '+ name_on_order +' !')
