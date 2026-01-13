@@ -1,4 +1,4 @@
-# Import python packages
+#import python packages
 import streamlit as st
 #import requests
 #from snowflake.snowpark.context import get_active_session
@@ -33,11 +33,11 @@ st.write(fileName)
 st.write(fileimage)
 image = fileimage + '/' + fileName
 #st.image(image)
-price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE']
-size = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'SIZE_LIST']
-desc = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'UPSELL_PRODUCT_DESC']
-st.write(price)
-st.write(size)
+#price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE']
+#size = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'SIZE_LIST']
+#desc = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'UPSELL_PRODUCT_DESC']
+#st.write(price)
+#st.write(size)
 
    # my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             #values ('""" + ingredients_string + """','""" + name_on_order + """')"""
