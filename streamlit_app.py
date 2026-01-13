@@ -1,4 +1,5 @@
-import streamlit as st
+
+fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]import streamlit as st
 #import requests
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
@@ -22,6 +23,9 @@ catalog_list = st.selectbox("Choose Color", pd_df['COLOR_OR_STYLE'], index=None,
 st.write(catalog_list)
 fileName = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_NAME'].iloc[0]
 fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
-st.write(fileName)
-st.write(fileimage)
+price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
+size = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'SIZE_LIST'].iloc[0]
+desc = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'UPSELL_PRODUCT_DESC'].iloc[0]
+st.write('Price: ', price)
+st.write('Size Avaibale:', size)
 
