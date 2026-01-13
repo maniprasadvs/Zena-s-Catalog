@@ -27,8 +27,8 @@ pd_df = my_dataframe.to_pandas()
 catalog_list = st.selectbox("Choose Color", my_dataframe, index=None)
 
 if catalog_list:
-    file-url = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
-    st.image(file-url)
+    fileimage = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'FILE_URL'].iloc[0]
+    st.image(fileimage)
     price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE'].iloc[0]
     st.subheader(catalog_list + ' Color Selected!')
     st.write(catalog_list)
