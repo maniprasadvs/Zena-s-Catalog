@@ -29,8 +29,8 @@ catalog_list = st.selectbox("Choose Color", my_dataframe)
 if catalog_list:
     catalog_string = ''
     #for catalog_chosen in catalog_list:
-        catalog_string = catalog_chosen
-        price = pd_df.loc[pd_df['color_or_style'] == catalog_chosen, 'price'].iloc[0]
+        catalog_string = catalog_list
+        price = pd_df.loc[pd_df['color_or_style'] == catalog_list, 'price'].iloc[0]
         st.subheader(catalog_chosen + ' Color Selected!')
         #smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+search_on)
         #st.text(smoothiefroot_response.json())
