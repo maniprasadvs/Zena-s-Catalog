@@ -28,5 +28,5 @@ size = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'SIZE_LIST'].iloc[0]
 desc = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'UPSELL_PRODUCT_DESC'].iloc[0]
 st.write('Price: ', price)
 st.write('Size Avaibale:', size)
-st.write(Desc)
+st.write(desc)
 
