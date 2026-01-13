@@ -33,11 +33,11 @@ st.write(fileName)
 st.write(fileimage)
 image = fileimage + '/' + fileName
 #st.image(image)
-price = pd_df[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE']
+price = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'PRICE']
 size = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'SIZE_LIST']
 desc = pd_df.loc[pd_df['COLOR_OR_STYLE'] == catalog_list, 'UPSELL_PRODUCT_DESC']
 st.write('Price :', price)
-st.write(desc)
+st.write(size)
 
    # my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             #values ('""" + ingredients_string + """','""" + name_on_order + """')"""
