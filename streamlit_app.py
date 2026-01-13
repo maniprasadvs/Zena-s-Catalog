@@ -28,14 +28,13 @@ catalog_list = st.selectbox("Choose Color", my_dataframe)
 
 if catalog_list:
     catalog_string = ''
-    #for catalog_chosen in catalog_list:
-        catalog_string = catalog_list
-        price = pd_df.loc[pd_df['color_or_style'] == catalog_list, 'price'].iloc[0]
-        st.subheader(catalog_chosen + ' Color Selected!')
+    #catalog_string = catalog_list
+    price = pd_df.loc[pd_df['color_or_style'] == catalog_list, 'price'].iloc[0]
+    st.subheader(catalog_list + ' Color Selected!')
         #smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/"+search_on)
         #st.text(smoothiefroot_response.json())
         #sf_df = st.dataframe(data=smoothiefroot_response.json(),width="content")
-    st.write(catalog_string)
+    st.write(catalog_list)
 
    # my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             #values ('""" + ingredients_string + """','""" + name_on_order + """')"""
